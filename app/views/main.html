@@ -69,7 +69,7 @@
 		<input type="text" ng-model="carBrand">
 	</div>
 
-	<svg ng-attr-width="{{svgWidth}}" ng-attr-height="{{svgHeight}}">
+	<svg class="car" ng-attr-width="{{svgWidth}}" ng-attr-height="{{svgHeight}}">
 		<g ng-attr-transform={{"scale("+svgScale+")"}}>
 		<rect class="toit" ng-attr-x="{{carTopXPosition()}}" y="0" ng-attr-width="{{0.5*carLength}}" ng-attr-height="{{carTopHeight}}"></rect>
 		<rect x="0" ng-attr-y="{{carTopHeight}}" ng-attr-width="{{carLength}}" ng-attr-height="{{carHeight}}"></rect>
@@ -83,7 +83,18 @@
 	</svg>
 
   </p>
+</div>
 
+<div class="row marketing">
+  <h4>Bar Chart</h4>
+
+	<svg class="barchart" ng-attr-width="{{barchartWidth}}" ng-attr-height="{{barchartHeight}}">
+		<g ng-attr-transform="{{offsetGroup($index) }}" ng-repeat="d in data">
+			<text> {{d.dept}} </text>
+			<rect  ng-attr-y="{{5}}"  ng-attr-width="{{barWidth(d.value)}}" ng-attr-height="{{barHeight}}"></rect>
+		</g>
+
+	</svg>
 
 </div>
 
