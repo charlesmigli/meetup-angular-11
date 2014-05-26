@@ -88,10 +88,15 @@
 <div class="row marketing">
   <h4>Bar Chart</h4>
 
+	<div>
+		<input type="checkbox" ng-model="ascending" >
+	</div>
+
 	<svg class="barchart" ng-attr-width="{{barchartWidth}}" ng-attr-height="{{barchartHeight}}">
-		<g ng-attr-transform="{{offsetGroup($index) }}" ng-repeat="d in data">
+		<g ng-attr-transform="{{offsetGroup($index) }}" ng-repeat="d in data  | orderBy: 'value': ascending">
 			<text> {{d.dept}} </text>
 			<rect  class="bar-{{$index}}" ng-attr-y="{{5}}"  ng-attr-width="{{barWidth(d.value)}}" ng-attr-height="{{barHeight}}"></rect>
+			<text  ng-attr-y="{{5 + barHeight}}"  ng-attr-x="{{barWidth(d.value) + 10}}"> {{d.value | number:2 }} % </text>
 		</g>
 
 	</svg>

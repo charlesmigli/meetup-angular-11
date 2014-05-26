@@ -37,6 +37,7 @@ angular.module('talkAngularApp')
 		$scope.barOffset = 30;
 		$scope.barchartWidth = 570;
 		$scope.barchartHeight = 600;
+		$scope.ascending = true;
 
 
 		$scope.data = [ { value: 0.586721 , dept:'Hautes-Pyrénées'}
