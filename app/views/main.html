@@ -91,7 +91,7 @@
 	<svg class="barchart" ng-attr-width="{{barchartWidth}}" ng-attr-height="{{barchartHeight}}">
 		<g ng-attr-transform="{{offsetGroup($index) }}" ng-repeat="d in data">
 			<text> {{d.dept}} </text>
-			<rect  ng-attr-y="{{5}}"  ng-attr-width="{{barWidth(d.value)}}" ng-attr-height="{{barHeight}}"></rect>
+			<rect  class="bar-{{$index}}" ng-attr-y="{{5}}"  ng-attr-width="{{barWidth(d.value)}}" ng-attr-height="{{barHeight}}"></rect>
 		</g>
 
 	</svg>

@@ -119,3 +119,12 @@ svg.car {
 		fill: #F3C600;
 	}
 }
+svg.barchart{
+ @for $i from 0 through 10 {
+	 .bar-#{$i} {
+		 fill: hsl(200, 48,  20 + $i * 7 );
+	 }
+
+ }
+
+}
