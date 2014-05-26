@@ -89,16 +89,33 @@
   <h4>Bar Chart</h4>
 
 	<div>
-		<input type="checkbox" ng-model="ascending" >
+		Descending : <input type="checkbox" ng-model="ascending" >
 	</div>
 
 	<svg class="barchart" ng-attr-width="{{barchartWidth}}" ng-attr-height="{{barchartHeight}}">
-		<g ng-attr-transform="{{offsetGroup($index) }}" ng-repeat="d in data  | orderBy: 'value': ascending">
+		<g ng-attr-transform="{{offsetGroup($index) }}" ng-repeat="d in data  | orderBy: 'value': ascending track by d.dept">
 			<text> {{d.dept}} </text>
 			<rect  class="bar-{{$index}}" ng-attr-y="{{5}}"  ng-attr-width="{{barWidth(d.value)}}" ng-attr-height="{{barHeight}}"></rect>
 			<text  ng-attr-y="{{5 + barHeight}}"  ng-attr-x="{{barWidth(d.value) + 10}}"> {{d.value | number:2 }} % </text>
 		</g>
 
+	</svg>
+
+</div>
+
+<div class="row marketing">
+  <h4>Bubble Chart</h4>
+
+
+	<svg class="bubblechart" ng-attr-width="{{barchartWidth}}" ng-attr-height="{{barchartHeight}}">
+		<g  ng-repeat="d in data2 ">
+			<circle  class="circle-{{d.sexe}}" ng-attr-cx="{{circleXPosition(d.x)}}" ng-attr-cy="{{circleYPosition(d.y)}}"  ng-attr-r="{{circleRadius(d.effectif)}}" ></circle>
+		</g>
+		<g  ng-repeat="d in data2 ">
+			<text class="label" ng-attr-x="{{circleXPosition(d.x)}}" ng-attr-y="{{circleYPosition(d.y) - circleRadius(d.effectif) - 5}}" > {{d.age}} </text>
+		</g>
+
+	
 	</svg>
 
 </div>

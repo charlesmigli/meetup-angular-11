@@ -126,5 +126,17 @@ svg.barchart{
 	 }
 
  }
+}
+svg.bubblechart{
+	.label{
+		text-anchor: middle;
+
+	}
+	.circle-Femme {
+		fill: hsl(344, 100%, 50%);
+	}
+	.circle-Homme {
+		fill: hsl(192, 95%, 33%);
+	}
 
 }

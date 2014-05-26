@@ -36,7 +36,7 @@ angular.module('talkAngularApp')
 		$scope.barHeight = 10;
 		$scope.barOffset = 30;
 		$scope.barchartWidth = 570;
-		$scope.barchartHeight = 600;
+		$scope.barchartHeight = 500;
 		$scope.ascending = true;
 
 
@@ -62,6 +62,31 @@ angular.module('talkAngularApp')
 
 		};
 
+		/****** PART THREE ******/
+		$scope.data2 = [
+		{ sexe: 'Femme', age:'15 à 30 ans',   x: 77, y: 61, effectif: 529},
+		{ sexe: 'Femme', age:'31 à 45 ans',   x: 78, y: 45, effectif: 52},
+		{ sexe: 'Femme', age:'46 à 62 ans',   x: 53, y: 33, effectif: 43},
+		{ sexe: 'Femme', age:'plus de 63 ans',x: 49, y: 21, effectif: 50},
+		{ sexe: 'Homme', age:'15 à 30 ans',   x: 43, y: 19, effectif: 343},
+		{ sexe: 'Homme', age:'31 à 45 ans',   x: 42, y: 8 , effectif: 335},
+		{ sexe: 'Homme', age:'46 à 62 ans',   x: 49, y: 15, effectif: 129},
+		{ sexe: 'Homme', age:'plus de 63 ans',x: 32, y: 4 , effectif: 89}
+		];
+
+		$scope.circleYPosition = function (value) {
+			var MAX_HEIGHT = 400;
+			return (value - 4) / (61. - 4) * MAX_HEIGHT + 50;
+
+		}
+		$scope.circleRadius = function (value) {
+			var MAX_RADIUS = 50;
+			return value / 529. * MAX_RADIUS;
+		}
+		$scope.circleXPosition = function (value) {
+			var MAX_WIDTH = 400;
+			return (value  - 32)/ (77 - 32.) * MAX_WIDTH + 50;
+		}
 
 
   });
