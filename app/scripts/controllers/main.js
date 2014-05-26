@@ -88,5 +88,14 @@ angular.module('talkAngularApp')
 			return (value  - 32)/ (77 - 32.) * MAX_WIDTH + 50;
 		}
 
+		$scope.setFocus = function(d) {
+			$scope.focus = { label: d.sexe + ' ' + d.age
+							, x: d.x
+							, y: d.y
+			};
+		}
+
+		$scope.setFocus($scope.data2[0]);
+
 
   });

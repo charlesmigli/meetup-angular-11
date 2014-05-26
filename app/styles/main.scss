@@ -127,7 +127,17 @@ svg.barchart{
 
  }
 }
+.focus-entry {
+	font-size: 12px;
+	.focus-value{
+		font-weight: bold;
+
+	}
+	
+
+}
 svg.bubblechart{
+	margin-top: 30px;
 	.label{
 		text-anchor: middle;
 
