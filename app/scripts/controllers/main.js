@@ -2,9 +2,8 @@
 
 angular.module('talkAngularApp')
   .controller('MainCtrl', function ($scope) {
-		$scope.svgWidth = 500;
-		$scope.svgHeight = 500;
-
-
+		$scope.svgWidth = 800;
+		$scope.svgHeight = 700;
+		$scope.svgScale = 2;
 
   });
