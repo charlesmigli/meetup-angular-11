@@ -74,7 +74,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 930px;
+        max-width: 1020px;
     }
 
     /* Remove the padding we set earlier */
@@ -96,11 +96,16 @@ body {
 
 .sliders {
 	width: 300px;
+	float: left;
+	margin-right: 100px;
 
 }
 svg {
-	#toit {
+	.toit {
 		fill: #255269;
+	}
+	.carbrand {
+		text-anchor: middle;
 
 	}
 	
