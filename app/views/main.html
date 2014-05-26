@@ -13,8 +13,8 @@
   <h4>SVG</h4>
   <p>
 
-	<svg width="500" height="500">
-		<g transform="scale(1)translate(2, 1)">
+	<svg ng-attr-width="{{svgWidth}}" ng-attr-height="{{svgHeight}}">
+		<g ng-attr-transform={{scale(2)translate(2, 1)}}>
 		<rect id="toit" x="65" y="0" width="120" height="20"></rect>
 		<rect x="0" y="20" width="250" height="60"></rect>
 		<circle cx="200" cy="80" r="30" ></circle>
