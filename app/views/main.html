@@ -120,17 +120,17 @@
 	</div>
 
 	<svg class="bubblechart" ng-attr-width="{{barchartWidth}}" ng-attr-height="{{barchartHeight + 20}}">
-		<g  transform="translate(10,0)" ng-repeat="d in data2 ">
+		<g  ng-class="{selected: focus.id == d.id}" transform="translate(10,0)" ng-repeat="d in data2 ">
 			<circle  ng-click="setFocus(d)" class="circle-{{d.sexe}}" ng-attr-cx="{{circleXPosition(d.x)}}" ng-attr-cy="{{circleYPosition(d.y)}}"  ng-attr-r="{{circleRadius(d.effectif)}}" ></circle>
 		</g>
-		<g  transform="translate(10,0)" ng-repeat="d in data2 ">
+		<g  ng-class="{selected: focus.id == d.id}" transform="translate(10,0)" ng-repeat="d in data2 ">
 			<text class="label" ng-attr-x="{{circleXPosition(d.x)}}" ng-attr-y="{{circleYPosition(d.y) - circleRadius(d.effectif) - 5}}" > {{d.age}} </text>
 		</g>
 
 		<line class="axis" ng-attr-x1="{{0}}" ng-attr-y1="{{barchartHeight-1}}" ng-attr-x2="{{barchartWidth}}" ng-attr-y2="{{barchartHeight-1}}" > </line>
-		<text y="15" x="5" > % ayant été sur un site de partage</text>
+		<text class="label-axis" y="15" x="5" > % ayant été sur un site de partage</text>
 		<line class="axis" ng-attr-x1="{{2}}" ng-attr-y1="{{0}}" ng-attr-x2="{{2}}" ng-attr-y2="{{barchartHeight-1}}" > </line>
-		<text class="label-axis-x" ng-attr-y="{{barchartHeight +15}}" ng-attr-x="{{barchartWidth -5}}"> % ayant communiqué par messagerie instantannée </text>
+		<text class="label-axis label-axis-x" ng-attr-y="{{barchartHeight +15}}" ng-attr-x="{{barchartWidth -5}}"> % ayant communiqué par messagerie instantannée </text>
 
 	
 	</svg>

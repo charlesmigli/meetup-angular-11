@@ -128,7 +128,7 @@ svg.barchart{
  }
 }
 .focus-entry {
-	font-size: 12px;
+	font-size: 16px;
 	.focus-value{
 		font-weight: bold;
 
@@ -140,6 +140,22 @@ svg.bubblechart{
 	margin-top: 30px;
 	.label{
 		text-anchor: middle;
+	}
+	.selected {
+		.circle-Femme {
+			fill: hsl(344, 100%, 70%);
+			stroke: #333;
+			stroke-width: 2px;
+		}
+		.circle-Homme {
+			fill: hsl(200, 18%, 55%);
+			stroke: #333;
+			stroke-width: 2px;
+		}
+		.label {
+			fill: #ccc;
+
+		}
 
 	}
 	.circle-Femme {
@@ -151,6 +167,10 @@ svg.bubblechart{
 
 	.label-axis-x {
 		text-anchor: end;
+	}
+	.label-axis {
+		font-size: 12px;
+
 	}
 	.axis {
 		stroke:#333;

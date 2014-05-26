@@ -64,19 +64,19 @@ angular.module('talkAngularApp')
 
 		/****** PART THREE ******/
 		$scope.data2 = [
-		{ sexe: 'Femme', age:'15 à 30 ans',   x: 77, y: 61, effectif: 529},
-		{ sexe: 'Femme', age:'31 à 45 ans',   x: 78, y: 45, effectif: 52},
-		{ sexe: 'Femme', age:'46 à 62 ans',   x: 53, y: 33, effectif: 43},
-		{ sexe: 'Femme', age:'plus de 63 ans',x: 49, y: 21, effectif: 50},
-		{ sexe: 'Homme', age:'15 à 30 ans',   x: 43, y: 19, effectif: 343},
-		{ sexe: 'Homme', age:'31 à 45 ans',   x: 42, y: 8 , effectif: 335},
-		{ sexe: 'Homme', age:'46 à 62 ans',   x: 49, y: 15, effectif: 129},
-		{ sexe: 'Homme', age:'plus de 63 ans',x: 32, y: 4 , effectif: 89}
+		{ id: 1, sexe: 'Homme', age:'15 à 30 ans',   x: 77, y: 61, effectif: 529},
+		{ id: 2, sexe: 'Femme', age:'15 à 30 ans',   x: 78, y: 45, effectif: 522},
+		{ id: 3, sexe: 'Homme', age:'31 à 45 ans',   x: 53, y: 33, effectif: 431},
+		{ id: 4, sexe: 'Femme', age:'31 à 45 ans',x: 49, y: 21, effectif: 507},
+		{ id: 5, sexe: 'Homme', age:'46 à 62 ans',   x: 43, y: 19, effectif: 343},
+		{ id: 6, sexe: 'Femme', age:'46 à 62 ans',   x: 42, y: 8 , effectif: 335},
+		{ id: 7, sexe: 'Homme', age:'plus de 63 ans',   x: 49, y: 15, effectif: 129},
+		{ id: 8, sexe: 'Femme', age:'plus de 63 ans',x: 32, y: 4 , effectif: 89}
 		];
 
 		$scope.circleYPosition = function (value) {
 			var MAX_HEIGHT = 400;
-			return (value - 4) / (61. - 4) * MAX_HEIGHT + 50;
+			return MAX_HEIGHT - ((value - 4) / (61. - 4) * MAX_HEIGHT )+ 70;
 
 		}
 		$scope.circleRadius = function (value) {
@@ -89,9 +89,11 @@ angular.module('talkAngularApp')
 		}
 
 		$scope.setFocus = function(d) {
-			$scope.focus = { label: d.sexe + ' ' + d.age
-							, x: d.x
-							, y: d.y
+			$scope.focus =
+				 { label: d.sexe + ' ' + d.age
+				 , x: d.x
+				 , y: d.y
+				 , id : d.id
 			};
 		}
 
