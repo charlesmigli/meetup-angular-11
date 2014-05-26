@@ -139,4 +139,11 @@ svg.bubblechart{
 		fill: hsl(192, 95%, 33%);
 	}
 
+	.label-axis-x {
+		text-anchor: end;
+	}
+	.axis {
+		stroke:#333;
+		 stroke-width:2;
+	}
 }
