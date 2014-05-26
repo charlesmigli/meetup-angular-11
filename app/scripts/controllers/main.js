@@ -7,7 +7,7 @@ angular.module('talkAngularApp')
 		$scope.svgScale = 1;
 
 
-		$scope.wheelSize = 30;
+		$scope.wheelSize = 30.;
 		$scope.carLength = 250;
 		$scope.carTopHeight = 20;
 		$scope.carHeight = 60;
@@ -21,5 +21,17 @@ angular.module('talkAngularApp')
 		$scope.wheelXPosition = function() {
 			return {rear: 0.2*$scope.carLength, top:0.8*$scope.carLength}
 		};
+
+		var count = 0;
+		var interval = setInterval(function() {
+			count++;
+			if (count == 100) {
+				clearInterval(interval);
+			}
+			$scope.$apply(function(){
+				$scope.wheelSize = $scope.wheelSize + 0.2;
+			});
+		}, 10);
+
 
   });
